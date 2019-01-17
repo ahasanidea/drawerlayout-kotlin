@@ -6,9 +6,9 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import com.ahasanidea.kotlin.drawerlayout.fragment.FavoritesFragment
 import com.ahasanidea.kotlin.drawerlayout.fragment.HomeFragment
 import com.ahasanidea.kotlin.drawerlayout.fragment.SettingsFragment
@@ -19,7 +19,7 @@ import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
-    internal lateinit var fragmentManager: FragmentManager
+    private lateinit var fragmentManager: FragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,7 +87,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showSnackbarMessage(view: View) {}
+    private fun showSnackbarMessage() {
+         Log.d("df", "This is log message")
+    }
 
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
